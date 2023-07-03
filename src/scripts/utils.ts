@@ -1,11 +1,10 @@
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
-  setDoc,
-  doc,
   getDocs,
   query,
   collection,
+  addDoc,
 } from "firebase/firestore/lite";
 
 const firebaseConfig = {
@@ -40,9 +39,8 @@ function getDate() {
 }
 
 export function sendData(message: string) {
-  console.log(firebaseConfig);
   const date = getDate();
-  setDoc(doc(db, "data"), {
+  addDoc(collection(db, "data"), {
     date: date,
     message: message,
   })
