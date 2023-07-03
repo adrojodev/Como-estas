@@ -42,7 +42,7 @@ function getDate() {
 export function sendData(message: string) {
   console.log(firebaseConfig);
   const date = getDate();
-  setDoc(doc(db, "data", "alovelace"), {
+  setDoc(doc(db, "data"), {
     date: date,
     message: message,
   })
