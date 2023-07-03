@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import ResponsesTab from "../components/ResponsesTab";
+---
+
+<Layout title="Como estas">
+  <div class="flex flex-col w-4/5 mx-auto py-8 gap-4">
+    <h1 class="text-2xl font-bold">Ve las respuestas</h1>
+    <ResponsesTab client:idle />
+  </div>
+</Layout>
