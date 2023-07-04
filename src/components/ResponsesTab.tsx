@@ -18,8 +18,6 @@ const ResponsesTab = () => {
   const [status, data] = useAsyncFn(async () => {
     const response = await getData();
 
-    // Sort responses by created date, the date value is stored in response.date in format dd/mm/yy hh:mm:ss
-
     setResponses(response as Response[]);
   }, []);
 
@@ -46,14 +44,13 @@ const ResponsesTab = () => {
           <div
             key={index}
             className={classNames(
-              "grid gap-3 px-2 items-center",
+              "grid gap-3 px-2 items-stretch grid-cols-mobile md:grid-cols-desktop",
               index % 2 === 0 && "bg-gray-200",
               index === 0 && "rounded-t-lg",
               index === responses.length - 1 && "rounded-b-lg"
             )}
-            style={{ gridTemplateColumns: "12% 88%" }}
           >
-            <div className="flex flex-col items-start gap-2 border-r-2 border-gray-300 py-2">
+            <div className="flex flex-col items-start justify-center gap-2 border-r-2 border-gray-300 py-2">
               <div className="flex justify-center items-center">
                 <CalendarBlank />
                 <p className="text-xs">{date ?? "NA"}</p>
@@ -63,7 +60,11 @@ const ResponsesTab = () => {
                 <p className="text-xs">{time ?? "NA"}</p>
               </div>
             </div>
-            <p className="text-sm text-left pr-2">{response.message}</p>
+            <div className="flex justify-center items-center py-1">
+              <p className="text-sm text-left pr-2 w-full">
+                {response.message}
+              </p>
+            </div>
           </div>
         );
       })}
