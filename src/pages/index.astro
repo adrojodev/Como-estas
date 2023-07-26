@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TextArea from "../components/TextArea";
+import HomeContentContainer from "../components/HomeContentContainer";
 ---
 
 <Layout title="Como estás">
   <main class="w-full h-screen flex flex-col justify-center items-center gap-4">
-    <h1 class="text-2xl font-bold">¿Cómo estás?</h1>
-    <TextArea client:idle />
+    <HomeContentContainer client:idle />
   </main>
 </Layout>

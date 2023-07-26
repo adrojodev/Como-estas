@@ -46,7 +46,6 @@ export function sendData(message: string) {
   })
     .then(() => {
       alert("Se ha enviado, gracias 🙂");
-      window.location.href = "https://www.google.com";
     })
     .catch((error) => {
       alert("No se pudo mandar tu respuesta, intenta de nuevo 😭");
@@ -93,4 +92,25 @@ export function separateDateAndTime(date: string) {
     date: `${day}/${month}/${year}`,
     time: `${hour}:${minutes}:${seconds}`,
   };
+}
+
+export function getDayAndMonthFormatted(date: string) {
+  const dateWithoutHour = date.split(" ")[0];
+  const [day, month] = dateWithoutHour.split("/");
+  const months = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
+  return `Buenos Aires, ${day} de ${months[Number(month) - 1]}`;
 }
