@@ -112,5 +112,5 @@ export function getDayAndMonthFormatted(date: string) {
     "Diciembre",
   ];
 
-  return `Buenos Aires, ${day} de ${months[Number(month) - 1]}`;
+  return `${day} de ${months[Number(month) - 1]}`;
 }

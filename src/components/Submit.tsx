@@ -21,7 +21,7 @@ const Submit = ({ date, text }: SubmitProps) => {
       <div className="flex flex-col w-80 gap-2 items-center justify-center bg-black text-white py-6 px-6 rounded-2xl">
         <div className="flex items-center min-w-fit gap-2 w-full text-left">
           <div className="w-4 h-4 aspect-square bg-red-600 rounded-full"></div>
-          <h1 className="font-bold">Buenos Aires, 1 de Noviembre</h1>
+          <h1 className="font-bold">{title}</h1>
         </div>
         <p className="w-full text-left">{text}</p>
       </div>
