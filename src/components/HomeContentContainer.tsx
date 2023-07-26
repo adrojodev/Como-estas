@@ -20,7 +20,7 @@ const HomeContentContainer = () => {
 
   return (
     <div className="flex max-w-[70vw] flex-col items-center gap-3">
-      {!isSubmitted ? (
+      {isSubmitted ? (
         <Submit date={date} text={text} />
       ) : (
         <TextArea setIsSubmitted={setIsSubmitted} />
